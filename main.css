@@ -1,0 +1,203 @@
+/* pseudo selectores y otros especiales */
+:root {
+  --primary: #f2b366;
+  --secondary: #3f2f21;
+  --bg-primary: rgba(190, 183, 171, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Selectores por Tag */
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#swipeUp {
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+}
+
+#swipeUp img {
+  width: 50px;
+  filter: grayscale(100%);
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+/* Selectores de clase */
+
+.member__disabled {
+  filter: grayscale();
+}
+
+.button {
+  background-color: #7f4caf; /* Green */
+  border: none;
+  color: white;
+  padding: 7px 16px;
+  margin-top: 5px;
+  border-radius: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.header {
+  background-color: var(--bg-primary);
+  padding: 2ch;
+}
+
+.header--logo {
+  display: none;
+}
+
+.header--title {
+  color: var(--primary);
+  text-transform: uppercase;
+  text-shadow: 2px 2px black;
+  text-align: center;
+}
+
+.menu--item {
+  text-decoration: none;
+  padding: 0.2rem;
+  background-color: var(--secondary);
+  color: var(--primary);
+  border-radius: 14px;
+  width: 150px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.menu--item:hover {
+  color: var(--secondary);
+  background-color: var(--primary);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero {
+  height: 50vh;
+  background-image: url("./img/mobileCat.jpg");
+  background-size: cover;
+  color: white;
+  font-size: clamp(
+    1rem,
+    5vw,
+    3rem
+  ); /* idealmente quiero el tamaño del texto un 5% del viewpoer, pero no disminuyas más de 2rem y nunca aumentes más de 4rem*/
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+}
+
+.members {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.members--card {
+  height: 275px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 43%);
+  width: 100%;
+  padding: 5px;
+  max-width: 500px;
+}
+
+.card__patricia {
+  background: url("./img/patricia.png") no-repeat center 10%,
+    url("./img/pawns.jpg");
+}
+
+.card__veronica {
+  background: url("./img/veronica.png") no-repeat center 10%,
+    url("./img/pawns.jpg");
+}
+
+.card__edurne {
+  background: url("./img/edurne.png") no-repeat center 10%,
+    url("./img/pawns.jpg");
+}
+
+.members--title {
+  text-align: center;
+}
+
+.members--name {
+  color: var(--secondary);
+}
+
+.members--name,
+.members--role {
+  margin: 0;
+}
+
+.members--role {
+  color: white;
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.footer {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--bg-primary);
+}
+
+.footer--link {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+/* Versión tablet */
+
+@media (min-width: 598px) {
+  .header--title {
+    display: none;
+  }
+
+  .header--logo {
+    display: inline-block;
+    width: 100px;
+  }
+
+  .menu {
+    flex-direction: row;
+  }
+
+  .header {
+    display: flex;
+  }
+
+  .hero {
+    background-image: url("./img/sleepingCat.jpg");
+  }
+}
